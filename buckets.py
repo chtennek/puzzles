@@ -7,9 +7,9 @@ def key(word):
 
 if __name__ == '__main__':
     words = [x.strip() for x in open(sys.argv[1]).readlines()]
-    buckets = defaultdict(list)
+    dictionary = defaultdict(list)
     for w in words:
-        buckets[key(w)] += [w]
+        dictionary[key(w)] += [w]
 
     with open(sys.argv[2], 'w') as f:
-        json.dump(buckets, f, indent=4)
+        json.dump(dictionary, f, indent=4)
